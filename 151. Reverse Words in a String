@@ -1,0 +1,16 @@
+class Solution {
+    public String reverseWords(String s) {
+        String[] test = s.split("\\s+");//打這樣可刪除全部空白符號
+        Stack<String> st = new Stack<>();
+        for(int i=0;i<test.length;i++)
+        {
+            st.push(test[i]);         
+            st.push(" ");
+        }
+        StringBuilder ans = new StringBuilder("");
+        while(!st.isEmpty()){
+            ans.append(st.pop());
+        }
+        return ans.toString().trim();//trim可刪除頭尾空白符號
+    }
+}
